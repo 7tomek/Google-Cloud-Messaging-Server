@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.15), see www.w3.org" />
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+/*<![CDATA[*/
+                body {
+                        /*font-family: menlo, monospace ;*/
+                        font-family: Helvetica;
+                        font-size: 15px;
+                        color: #333;
+                        -webkit-font-smoothing: antialiased;
+                }
+                p {
+                        margin-bottom: 18px;
+                        word-spacing: -1px;
+                        text-align: center;
+                }
+		.rounded_box {
+			border-radius: 5px;
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 20px;
+			border: 1px solid;
+			border-color: #e6e6e6;
+			background-color:#9f9f9f;
+		}
+		.rounded_input {
+			border-radius: 5px;
+			padding-top: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-bottom: 5px;
+			border: 1px solid;
+			border-color: #e6e6e6;
+			width: 100%;
+			margin-bottom:10px;
+			margin-top:10px;
+		}
+                .container { 
+			border-radius: 5px;
+			border:1px solid #e6e6e6;
+			height: 110px;
+			font-family: monospace;
+			font-size: 13px;	
+			overflow-y: scroll;
+			background-color:white;
+			margin-bottom:: 10px;	
+		}
+		.button {
+			font-size: 14px;
+			font-family: Helvetica;
+		}
+  /*]]>*/
+  </style>
+
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <div class="rounded_box">
+    <p class="padding-top-10&quot;i"><b>Registred IDS</b></p>
+    <form id="delete" action="/" method="post" name="delete">
+    <div class="container">
+	    {% for item in items %}
+	    <input type="checkbox" class="items" name='delete_id' value='{{escape(item)}}' > {{ escape(item) }} </input><br />
+    	    {% end %}
+    </div>
+    <input type="submit" id="submit_btn" align="center" name="delete" value="DELETE SELECTED" class="button" /><br />
+    </form>
+  </div>
+  <br />
+  <br />
+  <div class="rounded_box">
+
+      <p class="padding-top-10"><b>Registration ID Device</b></p>
+      <p class="padding-top-8"> add the registration ID to server GCM manul</p>
+      <form id="register" action="/" method="post" name="register">
+        <input type="text" class="rounded_input" name="reg_id" align="center"  id="reg_id" /><br />
+        <input type="submit" id="submit_btn" align="center" name="reg_id_add" value="ADD ID" class="button" /><br />
+      </form>
+  </div>
+  <br />
+  <br />
+  <div class="rounded_box" >
+      <p class="padding-top-10"><b>Sending Messages</b></p>
+      <form id="send" action="/" method="post" name="send">
+        <div class="container">
+	    {% for item in items %}
+	    <input type="checkbox" class="items" name='send_id' value='{{escape(item)}}' > {{ escape(item) }} </input><br />
+    	    {% end %}
+    	</div>
+	<input type="text" class="rounded_input" name="message" align="center"  id="message" /><br />
+        <input type="submit" id="submit_btn" align="center" name="reg_id_add" value="SEND MESSAGE" class="button" /><br />
+      </form>
+  </div>
+</body>
+</html>
